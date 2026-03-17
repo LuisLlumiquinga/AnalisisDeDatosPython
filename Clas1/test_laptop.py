@@ -2,6 +2,14 @@ from laptop import Laptop
 from laptop_gaming import Laptop_Gaming
 from Laptop_Business import Laptop_Business
 
+def imprimir_informe(laptop):
+    informe=laptop.realizar_informe_uso()
+
+    for clave, valor in informe.items():
+        print(f"{clave}: {valor}")
+    
+    print("\n")
+
 laptop_pepito = Laptop("lenovo", "i7", 32)
 laptop_maria = Laptop("lenovo", "i7", 32, 600)
 
@@ -21,3 +29,8 @@ print(laptop_juanito.realizar_diagnostico_sistema())
 laptop_empresa = Laptop_Business("Dell", "i7", 16, 512, 10)
 print("\nLAPTOP EMPRESA")
 print(laptop_empresa.realizar_diagnostico_sistema())
+
+print("\nLAPTOP PEPITO:")
+imprimir_informe(laptop_pepito)
+print("\nLAPTOP JUANITO:")
+imprimir_informe(laptop_juanito)
